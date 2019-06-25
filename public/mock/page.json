@@ -1,0 +1,66 @@
+{
+  "success": true,
+  "code": 0,
+  "message": "",
+  "data": {
+    "code": 0,
+    "msg": null,
+    "limit": 10,
+    "page": 1,
+    "pageTotal": 1,
+    "data": [{
+        "sourceType": "提现退回",
+        "changeCnt": 0.5,
+        "beforeCnt": 14.5,
+        "afterCnt": 15,
+        "addTime": "2019-05-22 11:43:52"
+      },
+      {
+        "sourceType": "提现",
+        "changeCnt": 15,
+        "beforeCnt": 29.5,
+        "afterCnt": 14.5,
+        "addTime": "2019-05-22 11:42:35"
+      },
+      {
+        "sourceType": "提现",
+        "changeCnt": 0.5,
+        "beforeCnt": 30,
+        "afterCnt": 29.5,
+        "addTime": "2019-05-22 11:42:11"
+      },
+      {
+        "sourceType": "提现",
+        "changeCnt": 0.9,
+        "beforeCnt": 30.9,
+        "afterCnt": 30,
+        "addTime": "2019-05-22 11:38:34"
+      },
+      {
+        "sourceType": "提现",
+        "changeCnt": 0.09,
+        "beforeCnt": 30.99,
+        "afterCnt": 30.9,
+        "addTime": "2019-05-22 11:37:34"
+      },
+      {
+        "sourceType": "提现退回",
+        "changeCnt": 0.88,
+        "beforeCnt": 30.11,
+        "afterCnt": 30.99,
+        "addTime": "2019-05-21 20:11:09"
+      },
+      {
+        "sourceType": "提现",
+        "changeCnt": 0.88,
+        "beforeCnt": 30.99,
+        "afterCnt": 30.11,
+        "addTime": "2019-05-21 20:10:41"
+      }
+    ],
+    "count": 7,
+    "supplierId": null,
+    "startTime": "2019-05-21T03:43:52.000+0000",
+    "endTime": "2019-05-23T03:43:52.000+0000"
+  }
+}

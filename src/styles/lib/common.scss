@@ -1,0 +1,169 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+button {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+// 去除选中虚线框
+*:focus,
+*:active,
+a:active,
+a:focus,
+input:focus,
+input:active {
+  -moz-outline-style: none;
+  outline: none;
+  outline: 0;
+  text-decoration: none;
+}
+
+p, ul, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/*容器滚动条*/
+.mainScroll::-webkit-scrollbar{
+  width: 10px;
+  height:10px;
+  border-radius: 5px;
+}
+.mainScroll::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  background: #000;
+}
+.mainScroll::-webkit-scrollbar-thumb{
+  -webkit-box-shadow: inset 0 0 5px rgba(45,58,72,1);
+  border-radius: 5px;
+  background: #33383e;
+}
+.mainScroll::-webkit-scrollbar-thumb:hover{
+  background: #5b626c;
+}
+.mainScroll::-webkit-scrollbar-thumb:active{
+  background: #4d525a;
+}
+
+/* 列表自定义 webkit 滚动条 */
+.smallScroll::-webkit-scrollbar{
+  width: 6px;
+  height: 66px;
+  border-radius: 5px;
+}
+// 轨道
+.smallScroll::-webkit-scrollbar-track{
+  border-radius: 5px;
+  background: none;
+}
+// 滚动条
+.smallScroll::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  background: #785a28;
+  &:hover {
+    background: #c8aa6e;
+  }
+  &:active {
+    background: #463714;
+  }
+}
+
+[v-cloak] {
+  display: none;
+}
+
+body {
+  font: 14px/1.5 'Microsoft Yahei';
+  background: #f2f3f5;
+  color: #1b1f33;
+}
+
+::placeholder {
+  color: #909192;
+}
+
+// 表单
+.form-wrap {
+  overflow: hidden;
+  .formitem {
+    @include cf;
+    // width: 420px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    .lbl {
+      float: left;
+      width: 70px;
+      height: 32px;
+      line-height: 32px;
+      text-align: right;
+      margin-right: 5px;
+    }
+    .ipt-text {
+      float: left;
+      width: 280px;
+      height: 32px;
+      line-height: 22px;
+      padding: 5px;
+      border: 1px solid #d4d4d4;
+      @include br(2px);
+      &.m {
+        width: 170px;
+      }
+      &.s {
+        width: 220px;
+      }
+    }
+    .btns {
+      width: 94px;
+      height: 32px;
+      line-height: 32px;
+      color: #1b1f32;
+      text-align: center;
+      @include br(2px);
+      margin-left: 10px;
+      background: none;
+      border: 1px solid #d9dade;
+      &.m {
+        width: 100px;
+      }
+      &.disable {
+        background-color: #dfdfdf;
+      }
+    }
+    .error {
+      margin-left: 5px;
+      height: 30px;
+      line-height: 30px;
+      color: #f74a4a;
+      // display: none;
+    }
+    .link {
+      float: left;
+      height: 34px;
+      line-height: 34px;
+      color: #518bdb;
+    }
+  }
+}
