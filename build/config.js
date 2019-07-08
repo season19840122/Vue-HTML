@@ -4,11 +4,6 @@ module.exports = {
       js: 'bargame', // js name & 文件目录名
       filename: '网吧电竞赛', // file name
       title: '网吧电竞赛' // page title
-    },
-    {
-      js: 'bargame2', // js name
-      filename: '网吧电竞赛2', // file name
-      title: '网吧电竞赛2' // page title
     }
   ],
   publicPath: '/', // 本地测试

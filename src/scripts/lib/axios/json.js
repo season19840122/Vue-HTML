@@ -1,4 +1,5 @@
-import axios from './axios';
+// import axios from './axios';
+import jsonp from './jsonp';
 
 /**
  * 将所有接口统一起来便于维护
@@ -22,69 +23,26 @@ export const upload = data => {
 } */
 
 /* 首页 */
-// 订单列表
-const orderList = data => {
-  return axios({
-    url: '/mock/orderList.json',
-    params: data
+// 直播
+const live = callback => {
+  return jsonp({
+    url: '/mock/live.json',
+    jsonpName: 'live',
+    callback
   });
 };
 
-// 提现信息
-const amountdeail = data => {
-  return axios({
-    url: '/mock/amountdeail.json',
-    params: data
-  });
-};
-
-// 提现明细列表
-const list = data => {
-  return axios({
-    url: '/mock/list.json',
-    params: data
-  });
-};
-
-// 确认提现
-const save = data => {
-  return axios({
-    url: '/mock/save.json',
-    params: data
-  });
-};
-
-// 修改提现账户
-const update = data => {
-  return axios({
-    url: '/mock/update.json',
-    params: data
-  });
-};
-
-// 提现短信验证码
-const sendActiveNo = data => {
-  return axios({
-    url: '/mock/sendActiveNo.json',
-    params: data
-  });
-};
-
-// 资金管理
-const page = data => {
-  return axios({
-    url: '/mock/page.json',
-    params: data
+// 资讯
+const news = callback => {
+  return jsonp({
+    url: '/mock/news.json',
+    jsonpName: 'news',
+    callback
   });
 };
 
 // 默认全部导出
 export default {
-  orderList,
-  amountdeail,
-  list,
-  save,
-  update,
-  sendActiveNo,
-  page
+  live,
+  news
 };

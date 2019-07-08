@@ -46,11 +46,12 @@ module.exports = webpackMerge(webpackBase, {
       {
         test: /\.(png|svg|jpg|gif)$/, // 处理图片
         use: {
-          loader: 'file-loader', // 解决打包 css 文件中图片路径无法解析的问题
+          loader: 'url-loader', // 解决打包 css 文件中图片路径无法解析的问题
           options: {
             // 打包生成图片的名字
-            name: `${config.imgOutputPath}/[name].[ext]`,
-            context: 'src/assets/images/'
+            name: `${config.imgOutputPath}/[path][name].[ext]`,
+            context: 'src/assets/images/',
+            limit: 8192
             // 图片的生成路径
             // outputPath: config.imgOutputPath,
           }
@@ -65,7 +66,16 @@ module.exports = webpackMerge(webpackBase, {
             name: `${config.fontOutputPath}/[name].[ext]`
           }
         }
-      }
+      },
+      // {
+      //   test: /\html$/, // 处理字体
+      //   use: {
+      //     loader: 'html-loader',
+      //     // options: {
+      //     //   attrs: [':data-src']
+      //     // }
+      //   }
+      // }
     ]
   },
   devServer: {
@@ -75,15 +85,15 @@ module.exports = webpackMerge(webpackBase, {
     hot: true, // HMR 启用，文档还说必须有 webpack.HotModuleReplacementPlugin 才能完全启用 HMR，经测试没有也可以启用，不用在命令行里配置，在此配置也可以。
     proxy: {
       // 测试环境
-      '/': {
-        target: 'http://yxb.51ux.com:8081', // 设置正式接口的域名和端口号
-        secure: false,
-        changeOrigin: true
-      }
+      // '/': {
+      //   target: 'http://yxb.51ux.com:8081', // 设置正式接口的域名和端口号
+      //   secure: false,
+      //   changeOrigin: true
+      // },
       // 本地环境
-      // '/mock': {
-      //   target: 'http://localhost:8080', 
-      // }
+      '/mock': {
+        target: 'http://localhost:8080', 
+      }
     }, 
     overlay: {
       errors: true,

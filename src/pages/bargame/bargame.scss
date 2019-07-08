@@ -1,3 +1,6 @@
+@import '@styles/lib/base.scss';
+@import '@styles/lib/common.scss';
+
 ::placeholder {
   color: #fff;
 }
@@ -64,9 +67,13 @@ ul {
   }
 }
 
+[v-cloak]{
+  display: none;
+}
+
 body {
   // background-color:#13151d;
-  font: 14px/1.5 'Microsoft YaHei';
+  font: 12px/1.5 'Microsoft YaHei';
 }
 .bg-box{
   min-width:1200px;
@@ -75,46 +82,541 @@ body {
   }
 }
 .bg1{
-  background:url(~@images/bargame/bg01.jpg) no-repeat center 0;
-  // background: #ff0000;
-  height:398px;
+  background: url(~@images/bargame/bg01.jpg) no-repeat center top;
+  height: 370px;
 }
 .bg2{
-  background:url(~@images/bargame/bg02.jpg) no-repeat center 0;
-  height:492px;
+  background: url(~@images/bargame/bg02.jpg) no-repeat center top;
+  height: 782px;
 }
 .bg3{
-  background-color: #21232b;
-  height:557px;
+  height: 807px;
+  &.lol {
+    background: url(~@images/bargame/bg-lol.jpg) no-repeat center top;
+  }
+  &.dota {
+    background: url(~@images/bargame/bg-dota.jpg) no-repeat center top;
+  }
+  &.dgm {
+    background: url(~@images/bargame/bg-dgm.jpg) no-repeat center top;
+  }
+}
+.bg4{
+  background: url(~@images/bargame/bg04.jpg) no-repeat center top;
+  height: 608px;
+}
+.bg5{
+  background: url(~@images/bargame/bg05.jpg) no-repeat center top;
+  height: 588px;
 }
 /* 背景 end */
 
 /* 主体内容 */
 .wrap-box {
-  position:absolute;
-  left:0;
-  top:0;
-  width:100%;
-  min-width:1200px;
-  overflow:hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  min-width: 1000px;
+  overflow: hidden;
   .wrap{
-    width:1200px;
-    height:1447px;
-    margin:0 auto;
-    position:relative;
-    .gd-wrap {
-      margin-top: 55px;
-      text-align: center;
-      .gd {
-        width: 300px;
-        height: 50px;
-        display: inline-block;
-        // background: url(../images/faq/btn-gd.png) no-repeat;
-        &:hover {
-          background-position: 0 -50px;
+    width: 1000px;
+    height: (370px+782+807+608+392);
+    margin: 0 auto;
+    position: relative;
+    .live-wrap {
+      position: absolute;
+      top: 370px;
+      left: 0;
+      width: 110%;
+      height: 370px;
+      .title-wrap {
+        width: 1000px;
+        .title {
+          width: 986px;
+          height: 49px;
+          margin: 14px auto 0;
+          background: url(~@images/bargame/bg01-tit.png) no-repeat;
+        }
+      }
+      .ifr-wrap {
+        margin-top: 25px;
+        display: flex;
+        .ifr {
+          width: 500px;
+          height: 280px;
+          overflow: hidden;
+          // background: #ff0000;
+        }
+        ul {
+          margin-left: 20px;
+          width: 500px;
+          overflow: hidden;
+          li {
+            width: 230px;
+            height: 130px;
+            position: relative;
+            float: left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            .live-item {
+              color: #c5d0f9;
+              img {
+                width: 100%;
+                height: 100%;
+                display: block;
+              }
+              .cap1 {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                bottom: 0;
+                height: 30px;
+                line-height: 30px;
+                background: #000000;
+                text-indent: 10px;
+              }
+            }
+          }
+        }
+      }
+      .btn-live {
+        display: block;
+        width: 100%;
+        height: 40px;
+        background: url(~@images/bargame/btn-live.png) no-repeat;
+      }
+      .news-wrap {
+        margin-top: 50px;
+        display: flex;
+        .news-pic {
+          width: 500px;
+          overflow: hidden;
+          ul {
+            width: 500px;
+            overflow: hidden;
+            li {
+              width: 230px;
+              height: 130px;
+              position: relative;
+              float: left;
+              margin-right: 20px;
+              margin-bottom: 20px;
+              .news-item {
+                color: #c5d0f9;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                }
+                .cap2 {
+                  position: absolute;
+                  left: 0;
+                  width: 100%;
+                  bottom: 0;
+                  height: 30px;
+                  line-height: 30px;
+                  background: #1751fc;
+                  text-indent: 10px;
+                }
+              }
+            }
+          }
+        }
+        .news-no-pic {
+          margin-left: 15px;
+          .cap-news {
+            display: block;
+            width: 119px;
+            height: 16px;
+            background: url(~@images/bargame/news.png) no-repeat;
+            margin-bottom: 12px;
+          }
+          ul {
+            .news-no-pic-item {
+              &.active {
+                .cap3 {
+                  color: #2b6ce0;
+                }
+              }
+              .cap3 {
+                font-size: 14px;
+                height: 42px;
+                line-height: 42px;
+                display: block;
+                border-bottom: 1px solid #20223f;
+                color: #c5d0f9;
+              }
+            }
+          }
         }
       }
     }
+    .pattern-wrap {
+      position: absolute;
+      top: 1153px;
+      left: 0;
+      width: 100%;
+      height: 807px;
+      .tab-wrap {
+        margin-top: 83px;
+        ul {
+          margin-left: 10px;
+          li {
+            cursor: pointer;
+            float: left;
+            margin-left: -10px;
+            width: 340px;
+            height: 40px;
+            background: url(~@images/bargame/btn-tab.png) no-repeat;
+            &.active {
+              background: url(~@images/bargame/btn-tab-hov.png) no-repeat;
+              color: #fff;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #c5d0f9;
+            .tab {
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .ico {
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+                &.lol {
+                  background: url(~@images/bargame/ico-lol.png) no-repeat;
+                }
+                &.dota {
+                  background: url(~@images/bargame/ico-dota.png) no-repeat;
+                }
+                &.dgm {
+                  background: url(~@images/bargame/ico-dgm.png) no-repeat;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .bonus-wrap {
+      position: absolute;
+      top: 1959px;
+      left: 0;
+      width: 100%;
+      height: 608px;
+      .title {
+        width: 986px;
+        height: 49px;
+        margin: 40px auto 0;
+        background: url(~@images/bargame/bg03-tit.png) no-repeat;
+      }
+      .tab-wrap {
+        margin-top: 27px;
+        ul {
+          margin-left: 10px;
+          display: flex;
+          justify-content: center;
+          li {
+            cursor: pointer;
+            float: left;
+            margin-left: -10px;
+            width: 340px;
+            height: 40px;
+            background: url(~@images/bargame/btn-tab.png) no-repeat;
+            &.active {
+              background: url(~@images/bargame/btn-tab-hov.png) no-repeat;
+              color: #fff;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: #c5d0f9;
+            .tab {
+              height: 40px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              .ico {
+                width: 28px;
+                height: 28px;
+                display: inline-block;
+                &.lol {
+                  background: url(~@images/bargame/ico-lol.png) no-repeat;
+                }
+                &.dota {
+                  background: url(~@images/bargame/ico-dota.png) no-repeat;
+                }
+                &.dgm {
+                  background: url(~@images/bargame/ico-dgm.png) no-repeat;
+                }
+              }
+            }
+          }
+        }
+      }
+      .chooseGame-wrap {
+        margin-top: 16px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+        .lbl {
+          color: #c5d0f9;
+          margin-right: 10px;
+        }
+        #selectGame {
+          width: 168px;
+          height: 24px;
+          background-color: #36162b;
+          color: #c5d0f9;
+          border: 1px solid #604d63;
+          option {
+            background-color: #36162b;
+            color: #c5d0f9;
+          }
+        }
+        .info {
+          &.lol, &.dota, &.dgm {
+            &.qg, &.dq {
+              width: 1003px;
+              height: 300px;
+              background: url(~@images/bargame/qg-lol.png) no-repeat;
+            }
+            &.dq {
+              background: url(~@images/bargame/dq-lol.png) no-repeat;
+            }
+          }
+          &.dota {
+            &.qg, &.dq {
+              background: url(~@images/bargame/qg-dota.png) no-repeat;
+            }
+            &.dq {
+              background: url(~@images/bargame/dq-dota.png) no-repeat;
+            }
+          }
+          &.dgm {
+            &.qg, &.dq {
+              background: url(~@images/bargame/qg-dgm.png) no-repeat;
+            }
+            &.dq {
+              background: url(~@images/bargame/dq-dgm.png) no-repeat;
+            }
+          }
+        }
+        .btn-apply {
+          display: block;
+          width: 258px;
+          height: 100px;
+          margin: 0 auto;
+          background: url(~@images/bargame/btn-apply.png) no-repeat;
+          &:hover {
+            background: url(~@images/bargame/btn-apply-hov.png) no-repeat;
+          }
+        }
+      }
+    }
+    .unit-wrap {
+      position: absolute;
+      top: 2567px;
+      left: 0;
+      width: 100%;
+      height: 392px;
+      .title {
+        width: 986px;
+        height: 49px;
+        margin: 22px auto 40px;
+        background: url(~@images/bargame/bg04-tit.png) no-repeat;
+      }
+      ul {
+        li {
+          float: left;
+          width: 235px;
+          height: 80px;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          &:nth-of-type(4n) {
+            margin-right: 0;
+          }
+          .unit {
+            img {
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-wrap {
+  // 弹层
+  .masklayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background: #000;
+    opacity: 0.5;
+  }
+  $w: 819px;
+  $h: 470px;
+  .dialog-wrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    border-radius: 2px;
+    width: $w;
+    height: $h;
+    background: url(~@images/bargame/dialog-bg.png) no-repeat;
+    &.info{
+      width: 539px;
+      height: 300px;
+      .contents {
+        padding: 105px 28px 0;
+        .text {
+          text-align: center;
+          font-size: 16px;
+        }
+        .btn-wrap{
+          .btn-confirm {
+            width: 156px;
+            font-size: 18px;
+            background: url(~@images/bargame/btn-confirm-s.png) no-repeat;
+            margin: 0 10px;
+          }
+        }
+      }
+    }
+    .i-close {
+      background: url(~@images/bargame/btn-close.png) no-repeat;
+      width: 14px;
+      height: 15px;
+      position: absolute;
+      right: 22px;
+      top: 21px;
+      cursor: pointer;
+    }
+    .contents {
+      padding: 50px 80px;
+      .caption {
+        color: #ffffff;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .text {
+        color: #8289a8;
+        font-size: 14px;
+        line-height: 30px;
+        margin-bottom: 15px;
+        .c1 {
+          color: #0295f8;
+          text-decoration: underline;
+        }
+      }
+      .text-wrap {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        ul {
+          li {
+            float: left;
+            margin-right: 80px;
+            cursor: pointer;
+            &:last-of-type(){
+              margin-right: 0;
+            }
+            &.active {
+              .game-item {
+                background: url(~@images/bargame/logo-bg-hov.png) no-repeat;
+              }
+            }
+            .game-item {
+              width: 100px;
+              height: 101px;
+              background: url(~@images/bargame/logo-bg.png) no-repeat;
+            }
+          }
+        }
+      }
+      .btn-wrap {
+        margin-top: 30px;
+        text-align: center;
+        .btn-confirm {
+          display: inline-block;
+          width: 276px;
+          height: 49px;
+          line-height: 49px;
+          background: url(~@images/bargame/btn-confirm.png) no-repeat;
+          color: #fff;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .message-wrap {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1002;
+    width: 329px;
+    height: 131px;
+    background: url(~@images/bargame/msg-bg.png) no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .message {
+      font-size: 18px;
+      color: #8289a8;
+    }
+  }
+}
+
+.float-wrap {
+  position: fixed;
+  left: 50%;
+  top: 450px;
+  margin-left: 520px;
+  width: 147px;
+  height: 330px;
+  background: url(~@images/bargame/sidebar.png) no-repeat;
+  a {
+    @extend .ti;
+  }
+  .anchor-wrap {
+    .anchor {
+      width: 98px;
+      height: 47px;
+      display: block;
+      margin: 0 auto;
+      &:hover, &.active {
+        background: url(~@images/bargame/sb-hov.png) no-repeat;
+      }
+    }
+  }
+  .btn-apply {
+    width: 115px;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+  }
+  .btn-service {
+    position: absolute;
+    left: 45px;
+    bottom: 0;
+    width: 60px;
+    height: 58px;
   }
 }
 /* 主体内容 end */
