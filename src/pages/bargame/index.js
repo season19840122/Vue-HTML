@@ -35,7 +35,7 @@ var bargame = {
     }
   },
   isOther(gameID){
-
+    app.currentModal = 'cga';
   }
 };
 
@@ -44,76 +44,9 @@ var app = new Vue({
   // store,
   data(){
     return {
-      live: [
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        }
-      ],
-      news: [
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        },
-        {
-          url: '#',
-          src: 'img_230x130.jpg',
-          text: '华东区比赛精彩剪辑'
-        }
-      ],
-      newsNoPic: [
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        },
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        },
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        },
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        },
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        },
-        {
-          url: '#',
-          text: '[新华网]电竞暑假还能赢取百万比赛奖金'
-        }
-      ],
+      live: [],
+      news: [],
+      newsNoPic: [],
       tabs: [
         {
           cls: 'lol',
@@ -139,12 +72,20 @@ var app = new Vue({
       ],
       units: [
         {
+          url: 'https://www.shunwang.com/',
+          src: 'sw.png'
+        },
+        {
           url: 'http://www.600633.cn/',
           src: 'zswh.png'
         },
         {
           url: 'http://www.xinhuanet.com/esports/',
           src: 'xhw.png'
+        },
+        {
+          url: 'http://www.huoma.cn/',
+          src: 'hm.png'
         },
         {
           url: 'http://www.cga.com.cn',
@@ -155,16 +96,8 @@ var app = new Vue({
           src: 'yy.png'
         },
         {
-          url: 'http://www.huoma.cn/',
-          src: 'hm.png'
-        },
-        {
           url: 'http://dragonest.com/',
           src: 'ly.png'
-        },
-        {
-          url: 'https://www.shunwang.com/',
-          src: 'sw.png'
         },
         {
           url: 'http://www.10086.cn/index/zj/index_571_571.html',
@@ -227,8 +160,8 @@ var app = new Vue({
       this.zone = 'qg';
     },
     selectGames(event) {
-      this.bonusIndex = 0;
-      this.zone = 'qg';
+      // this.bonusIndex = 0;
+      // this.zone = 'qg';
       var index = event.target.selectedIndex;
       if(index === 1) return this.game = 'dota';
       if(index === 2) return this.game = 'dgm';
@@ -256,16 +189,16 @@ var app = new Vue({
     clickGame(index){
       this.logoIndex = index;
     },
-    handleApply(){
-      this.isClient();
+    handleApply(index){
+      this.isClient(index);
     },
-    isClient(...arg){
-      // if(arg.length > 0) {
-      // 调起火马客户端，火马 gameId = 17014
-      bargame.isHuoma(17014);
-      return;
-      // }
-      // bargame.isOther();
+    isClient(index){
+      if(index === 0) {
+        // 调起火马客户端，火马 gameId = 17014
+        bargame.isHuoma(17014);
+        return;
+      }
+      bargame.isOther();
     },
     initLive(){
       axios.live((err, data)=>{

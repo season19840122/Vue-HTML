@@ -52,6 +52,7 @@ module.exports = webpackMerge(webpackBase, {
             // name: `${config.imgOutputPath}/[path][name].[hash:8].[ext]`,
             name: `${config.imgOutputPath}/[path][name].[ext]`,
             context: 'src/assets/images/',
+            limit: 8192,
             publicPath: ASSET_PATH
           }
         }

@@ -6,8 +6,8 @@ module.exports = {
       title: '网吧电竞赛' // page title
     }
   ],
-  publicPath: '/', // 本地测试
-  // publicPath: '//static.51ux.com/show/', // 正式静态资源域名
+  // publicPath: '/', // 本地测试
+  publicPath: '//gact.swjoy.com/ccel/', // 正式静态资源域名
   devServerOutputPath: '../dist',
   // cssOutputPath: 'res/seller/css', // 生成的目录要是相对路径
   // jsOutputPath: 'res/seller/js',
@@ -19,4 +19,6 @@ module.exports = {
   fontOutputPath: 'font',
 };
 
-// url: http://localhost:8080/网吧电竞赛.html
+// url: 
+// http://localhost:8080/网吧电竞赛.html
+// http://10.141.3.136:8080/网吧电竞赛.html

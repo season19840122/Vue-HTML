@@ -141,12 +141,13 @@
                 <li :class="{ active: logoIndex === index }" v-for="(item, index) in modal" @click="clickGame(index)">
                   <div class="game-item">
                     <img :src="'img/bargame/' + item.logo" alt="">
+                    <p class="txt">{{ item.name }}</p>
                   </div>
                 </li>
               </ul>
             </div>
             <div class="btn-wrap">
-              <button class="btn-confirm b" @click="handleApply">报名</button>
+              <button class="btn-confirm b" @click="handleApply(logoIndex)">报名</button>
             </div>
           </div>
         </div>
@@ -169,7 +170,7 @@
             <p class="text">该网吧未安装CGA客户端，请通知网管安装。</p>
             <div class="btn-wrap">
                 <button class="btn-confirm" @click="closeModal">知道了</button>
-                <a href="#" target="_blank" class="btn-confirm">打开报名链接</a>
+                <a href="http://es.cga.com.cn/match" target="_blank" class="btn-confirm">打开报名链接</a>
             </div>
           </div>
         </div>
@@ -177,7 +178,7 @@
         <div class="message-wrap" v-if="message">
           <p class="message">
             <i class="i-loading"></i>
-            正在启动比赛客户端..
+            <span>正在启动比赛客户端..</span>
           </p>
         </div>
       </div>

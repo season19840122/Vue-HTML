@@ -185,6 +185,9 @@ body {
         width: 100%;
         height: 40px;
         background: url(~@images/bargame/btn-live.png) no-repeat;
+        &:hover {
+          background: url(~@images/bargame/btn-live-hov.png) no-repeat;
+        }
       }
       .news-wrap {
         margin-top: 50px;
@@ -493,6 +496,9 @@ body {
             font-size: 18px;
             background: url(~@images/bargame/btn-confirm-s.png) no-repeat;
             margin: 0 10px;
+            &:hover {
+              background: url(~@images/bargame/btn-confirm-s-hov.png) no-repeat;
+            }
           }
         }
       }
@@ -540,11 +546,21 @@ body {
               .game-item {
                 background: url(~@images/bargame/logo-bg-hov.png) no-repeat;
               }
+              .txt {
+                color: #fff;
+              }
             }
             .game-item {
               width: 100px;
-              height: 101px;
+              height: 133px;
               background: url(~@images/bargame/logo-bg.png) no-repeat;
+            }
+            .txt {
+              font-size: 14px;
+              text-align: center;
+              height: 30px;
+              line-height: 30px;
+              color: #8289a8;
             }
           }
         }
@@ -560,6 +576,9 @@ body {
           background: url(~@images/bargame/btn-confirm.png) no-repeat;
           color: #fff;
           font-size: 20px;
+          &:hover {
+            background: url(~@images/bargame/btn-confirm-hov.png) no-repeat;
+          }
         }
       }
     }
@@ -578,7 +597,15 @@ body {
     justify-content: center;
     .message {
       font-size: 18px;
+      line-height: 32px;
       color: #8289a8;
+      display: flex;
+      .i-loading {
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background: url(~@images/bargame/loading.gif) no-repeat;
+      }
     }
   }
 }
