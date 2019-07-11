@@ -10,7 +10,7 @@ import jsonp from './jsonp';
 // 直播
 const live = callback => {
   return jsonp({
-    url: 'http://www.huoma.cn/sysNotice/listNotice?type=9',
+    url: 'https://client.huoma.cn/sysNotice/listNotice?type=9',
     jsonpName: 'live',
     callback
   });
@@ -19,7 +19,7 @@ const live = callback => {
 // 资讯
 const news = callback => {
   return jsonp({
-    url: 'http://www.huoma.cn/sysNotice/listNotice?type=10',
+    url: 'https://client.huoma.cn/sysNotice/listNotice?type=10',
     jsonpName: 'news',
     callback
   });

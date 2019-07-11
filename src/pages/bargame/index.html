@@ -40,7 +40,7 @@
               <ul>
                 <li v-for="(item, index) in live">
                   <a :href="item.linkUrl" target="_blank" class="live-item">
-                    <img :src="item.miniPic" alt="">
+                    <img v-if="item.miniPic" :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="">
                     <!-- <img :src="'img/bargame/test/' + item.src" alt=""> -->
                     <!-- <img :src="'~@images/bargame/test/' + item" alt=""> -->
                     <p class="cap1">{{ item.title }}</p>
@@ -54,7 +54,7 @@
                 <ul>
                   <li v-for="(item, index) in news">
                     <a :href="item.linkUrl" target="_blank" class="news-item">
-                      <img :src="item.miniPic" alt="">
+                      <img v-if="item.miniPic" :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="">
                       <!-- <img :src="'img/bargame/test/' + item.src" alt=""> -->
                       <!-- <img :src="'~@images/bargame/test/' + item" alt=""> -->
                       <p class="cap2">{{ item.title }}</p>
@@ -170,7 +170,7 @@
             <p class="text">该网吧未安装CGA客户端，请通知网管安装。</p>
             <div class="btn-wrap">
                 <button class="btn-confirm" @click="closeModal">知道了</button>
-                <a href="http://es.cga.com.cn/match" target="_blank" class="btn-confirm">打开报名链接</a>
+                <a href="http://es.cga.com.cn/match/event/id/633" target="_blank" class="btn-confirm">打开报名链接</a>
             </div>
           </div>
         </div>
