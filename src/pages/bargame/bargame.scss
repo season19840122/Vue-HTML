@@ -17,7 +17,8 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
   text-decoration: none;
 }
 
@@ -49,25 +50,26 @@ ul {
 
 /* 背景 */
 .browser {
-  height:28px;
-  font-size:14px;
-  line-height:28px;
-  color:#C7A17B;
-  background:#FFFFE1;
-  position:absolute;
-  width:100%;
-  min-width:1200px;
-  text-align:center;
-  z-index:1000;
-  left:0;
-  top:0;
+  height: 28px;
+  font-size: 14px;
+  line-height: 28px;
+  color: #C7A17B;
+  background: #FFFFE1;
+  position: absolute;
+  width: 100%;
+  min-width: 1200px;
+  text-align: center;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+
   a {
-    color:#06c;
-    text-decoration:underline;
+    color: #06c;
+    text-decoration: underline;
   }
 }
 
-[v-cloak]{
+[v-cloak] {
   display: none;
 }
 
@@ -75,40 +77,55 @@ body {
   // background-color:#13151d;
   font: 12px/1.5 'Microsoft YaHei';
 }
-.bg-box{
-  min-width:1200px;
+
+.bg-box {
+  min-width: 1200px;
+
   div {
-    width:100%;
+    width: 100%;
   }
 }
-.bg1{
+
+.bg1 {
   background: url(~@images/bargame/bg01.jpg) no-repeat center top;
   height: 370px;
 }
-.bg2{
+
+.bg2 {
   background: url(~@images/bargame/bg02.jpg) no-repeat center top;
   height: 782px;
 }
-.bg3{
+
+.bg3 {
   height: 807px;
+  margin: 0 auto;
+  background-color: #171B4B;
   &.lol {
-    background: url(~@images/bargame/bg-lol.jpg) no-repeat center top;
+    width: 1328px;
+    background: #171B4B url(~@images/bargame/bg-lol.jpg) no-repeat center top;
   }
+
   &.dota {
-    background: url(~@images/bargame/bg-dota.jpg) no-repeat center top;
+    width: 1328px;
+    background: #171B4B url(~@images/bargame/bg-dota.jpg) no-repeat center top;
   }
+
   &.dgm {
-    background: url(~@images/bargame/bg-dgm.jpg) no-repeat center top;
+    width: 1328px;
+    background: #171B4B url(~@images/bargame/bg-dgm.jpg) no-repeat center top;
   }
 }
-.bg4{
+
+.bg4 {
   background: url(~@images/bargame/bg04.jpg) no-repeat center top;
   height: 608px;
 }
-.bg5{
+
+.bg5 {
   background: url(~@images/bargame/bg05.jpg) no-repeat center top;
   height: 588px;
 }
+
 /* 背景 end */
 
 /* 主体内容 */
@@ -119,19 +136,23 @@ body {
   width: 100%;
   min-width: 1000px;
   overflow: hidden;
-  .wrap{
+
+  .wrap {
     width: 1000px;
     height: (370px+782+807+608+392);
     margin: 0 auto;
     position: relative;
+
     .live-wrap {
       position: absolute;
       top: 370px;
       left: 0;
       width: 110%;
       height: 370px;
+
       .title-wrap {
         width: 1000px;
+
         .title {
           width: 986px;
           height: 49px;
@@ -139,19 +160,23 @@ body {
           background: url(~@images/bargame/bg01-tit.png) no-repeat;
         }
       }
+
       .ifr-wrap {
         margin-top: 25px;
         display: flex;
+
         .ifr {
           width: 500px;
           height: 280px;
           overflow: hidden;
           // background: #ff0000;
         }
+
         ul {
           margin-left: 20px;
           width: 500px;
           overflow: hidden;
+
           li {
             width: 230px;
             height: 130px;
@@ -159,13 +184,16 @@ body {
             float: left;
             margin-right: 20px;
             margin-bottom: 20px;
+
             .live-item {
               color: #c5d0f9;
+
               img {
                 width: 100%;
                 height: 100%;
                 display: block;
               }
+
               .cap1 {
                 position: absolute;
                 left: 0;
@@ -174,30 +202,37 @@ body {
                 height: 30px;
                 line-height: 30px;
                 background: #000000;
-                text-indent: 10px;
+                padding: 0 10px;
+                @extend .eps;
               }
             }
           }
         }
       }
+
       .btn-live {
         display: block;
         width: 100%;
         height: 40px;
         background: url(~@images/bargame/btn-live.png) no-repeat;
+
         &:hover {
           background: url(~@images/bargame/btn-live-hov.png) no-repeat;
         }
       }
+
       .news-wrap {
         margin-top: 50px;
         display: flex;
+
         .news-pic {
           width: 500px;
           overflow: hidden;
+
           ul {
             width: 500px;
             overflow: hidden;
+
             li {
               width: 230px;
               height: 130px;
@@ -205,43 +240,56 @@ body {
               float: left;
               margin-right: 20px;
               margin-bottom: 20px;
+
               .news-item {
                 color: #c5d0f9;
+
                 img {
                   width: 100%;
                   height: 100%;
                   display: block;
                 }
+
                 .cap2 {
                   position: absolute;
                   left: 0;
-                  width: 100%;
                   bottom: 0;
                   height: 30px;
                   line-height: 30px;
                   background: #1751fc;
-                  text-indent: 10px;
+                  padding-left: 10px;
+                  padding-right: 10px;
+                  width: 230px;
+                  @extend .eps;
                 }
               }
             }
           }
         }
+
         .news-no-pic {
           margin-left: 15px;
+          width: 485px;
+
           .cap-news {
             display: block;
             width: 119px;
             height: 16px;
             background: url(~@images/bargame/news.png) no-repeat;
             margin-bottom: 12px;
+
           }
+
           ul {
             .news-no-pic-item {
+              width: 485px;
+
               &.active {
                 .cap3 {
                   color: #2b6ce0;
                 }
               }
+
               .cap3 {
                 font-size: 14px;
                 height: 42px;
@@ -249,22 +297,34 @@ body {
                 display: block;
                 border-bottom: 1px solid #20223f;
                 color: #c5d0f9;
+                width: 100%;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+
+                &:hover {
+                  color: #2b6ce0;
+                }
               }
             }
           }
         }
       }
     }
+
     .pattern-wrap {
       position: absolute;
       top: 1153px;
       left: 0;
       width: 100%;
       height: 807px;
+
       .tab-wrap {
         margin-top: 83px;
+
         ul {
           margin-left: 10px;
+
           li {
             cursor: pointer;
             float: left;
@@ -272,30 +332,37 @@ body {
             width: 340px;
             height: 40px;
             background: url(~@images/bargame/btn-tab.png) no-repeat;
+
             &.active {
               background: url(~@images/bargame/btn-tab-hov.png) no-repeat;
               color: #fff;
             }
+
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
             color: #c5d0f9;
+
             .tab {
               height: 40px;
               display: flex;
               align-items: center;
               justify-content: center;
+
               .ico {
                 width: 28px;
                 height: 28px;
                 display: inline-block;
+
                 &.lol {
                   background: url(~@images/bargame/ico-lol.png) no-repeat;
                 }
+
                 &.dota {
                   background: url(~@images/bargame/ico-dota.png) no-repeat;
                 }
+
                 &.dgm {
                   background: url(~@images/bargame/ico-dgm.png) no-repeat;
                 }
@@ -305,24 +372,29 @@ body {
         }
       }
     }
+
     .bonus-wrap {
       position: absolute;
       top: 1959px;
       left: 0;
       width: 100%;
       height: 608px;
+
       .title {
         width: 986px;
         height: 49px;
         margin: 40px auto 0;
         background: url(~@images/bargame/bg03-tit.png) no-repeat;
       }
+
       .tab-wrap {
         margin-top: 27px;
+
         ul {
           margin-left: 10px;
           display: flex;
           justify-content: center;
+
           li {
             cursor: pointer;
             float: left;
@@ -330,30 +402,37 @@ body {
             width: 340px;
             height: 40px;
             background: url(~@images/bargame/btn-tab.png) no-repeat;
+
             &.active {
               background: url(~@images/bargame/btn-tab-hov.png) no-repeat;
               color: #fff;
             }
+
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
             color: #c5d0f9;
+
             .tab {
               height: 40px;
               display: flex;
               align-items: center;
               justify-content: center;
+
               .ico {
                 width: 28px;
                 height: 28px;
                 display: inline-block;
+
                 &.lol {
                   background: url(~@images/bargame/ico-lol.png) no-repeat;
                 }
+
                 &.dota {
                   background: url(~@images/bargame/ico-dota.png) no-repeat;
                 }
+
                 &.dgm {
                   background: url(~@images/bargame/ico-dgm.png) no-repeat;
                 }
@@ -362,78 +441,102 @@ body {
           }
         }
       }
+
       .chooseGame-wrap {
         margin-top: 16px;
         height: 24px;
         line-height: 24px;
         font-size: 14px;
+
         .lbl {
           color: #c5d0f9;
           margin-right: 10px;
         }
+
         #selectGame {
           width: 168px;
           height: 24px;
           background-color: #36162b;
           color: #c5d0f9;
           border: 1px solid #604d63;
+
           option {
             background-color: #36162b;
             color: #c5d0f9;
           }
         }
+
         .info {
-          &.lol, &.dota, &.dgm {
-            &.qg, &.dq {
+
+          &.lol,
+          &.dota,
+          &.dgm {
+
+            &.qg,
+            &.dq {
               width: 1003px;
               height: 300px;
               background: url(~@images/bargame/qg-lol.png) no-repeat;
             }
+
             &.dq {
               background: url(~@images/bargame/dq-lol.png) no-repeat;
             }
           }
+
           &.dota {
-            &.qg, &.dq {
+
+            &.qg,
+            &.dq {
               background: url(~@images/bargame/qg-dota.png) no-repeat;
             }
+
             &.dq {
               background: url(~@images/bargame/dq-dota.png) no-repeat;
             }
           }
+
           &.dgm {
-            &.qg, &.dq {
+
+            &.qg,
+            &.dq {
               background: url(~@images/bargame/qg-dgm.png) no-repeat;
             }
+
             &.dq {
               background: url(~@images/bargame/dq-dgm.png) no-repeat;
             }
           }
         }
+
         .btn-apply {
           display: block;
           width: 258px;
           height: 100px;
           margin: 0 auto;
-          background: url(~@images/bargame/btn-apply.png) no-repeat;
+          background: url(~@images/bargame/btn-apply.png) no-repeat 0 0;
+
           &:hover {
-            background: url(~@images/bargame/btn-apply-hov.png) no-repeat;
+            background-position: 0 -116px;
           }
         }
       }
     }
+
     .unit-wrap {
       position: absolute;
       top: 2567px;
       left: 0;
       width: 100%;
       height: 392px;
+
       .title {
         width: 986px;
         height: 49px;
         margin: 22px auto 40px;
         background: url(~@images/bargame/bg04-tit.png) no-repeat;
       }
+
       ul {
         li {
           float: left;
@@ -441,9 +544,11 @@ body {
           height: 80px;
           margin-right: 20px;
           margin-bottom: 20px;
+
           &:nth-of-type(4n) {
             margin-right: 0;
           }
+
           .unit {
             img {
               width: 100%;
@@ -458,6 +563,7 @@ body {
 }
 
 .modal-wrap {
+
   // 弹层
   .masklayer {
     position: fixed;
@@ -469,8 +575,10 @@ body {
     background: #000;
     opacity: 0.5;
   }
+
   $w: 819px;
   $h: 470px;
+
   .dialog-wrap {
     position: fixed;
     left: 50%;
@@ -481,21 +589,26 @@ body {
     width: $w;
     height: $h;
     background: url(~@images/bargame/dialog-bg.png) no-repeat;
-    &.info{
+
+    &.info {
       width: 539px;
       height: 300px;
+
       .contents {
         padding: 105px 28px 0;
+
         .text {
           text-align: center;
           font-size: 16px;
         }
-        .btn-wrap{
+
+        .btn-wrap {
           .btn-confirm {
             width: 156px;
             font-size: 18px;
             background: url(~@images/bargame/btn-confirm-s.png) no-repeat;
             margin: 0 10px;
+
             &:hover {
               background: url(~@images/bargame/btn-confirm-s-hov.png) no-repeat;
             }
@@ -503,6 +616,7 @@ body {
         }
       }
     }
+
     .i-close {
       background: url(~@images/bargame/btn-close.png) no-repeat;
       width: 14px;
@@ -512,49 +626,60 @@ body {
       top: 21px;
       cursor: pointer;
     }
+
     .contents {
       padding: 50px 80px;
+
       .caption {
         color: #ffffff;
         font-size: 20px;
         text-align: center;
         margin-bottom: 40px;
       }
+
       .text {
         color: #8289a8;
         font-size: 14px;
         line-height: 30px;
         margin-bottom: 15px;
+
         .c1 {
           color: #0295f8;
           text-decoration: underline;
         }
       }
+
       .text-wrap {
         margin-top: 30px;
         display: flex;
         justify-content: center;
+
         ul {
           li {
             float: left;
             margin-right: 80px;
             cursor: pointer;
-            &:last-of-type(){
+
+            &:last-of-type() {
               margin-right: 0;
             }
+
             &.active {
               .game-item {
                 background: url(~@images/bargame/logo-bg-hov.png) no-repeat;
               }
+
               .txt {
                 color: #fff;
               }
             }
+
             .game-item {
               width: 100px;
               height: 133px;
               background: url(~@images/bargame/logo-bg.png) no-repeat;
             }
+
             .txt {
               font-size: 14px;
               text-align: center;
@@ -565,9 +690,11 @@ body {
           }
         }
       }
+
       .btn-wrap {
         margin-top: 30px;
         text-align: center;
+
         .btn-confirm {
           display: inline-block;
           width: 276px;
@@ -576,6 +703,7 @@ body {
           background: url(~@images/bargame/btn-confirm.png) no-repeat;
           color: #fff;
           font-size: 20px;
+
           &:hover {
             background: url(~@images/bargame/btn-confirm-hov.png) no-repeat;
           }
@@ -583,6 +711,7 @@ body {
       }
     }
   }
+
   .message-wrap {
     position: fixed;
     left: 50%;
@@ -595,11 +724,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
     .message {
       font-size: 18px;
       line-height: 32px;
       color: #8289a8;
       display: flex;
+
       .i-loading {
         display: inline-block;
         width: 32px;
@@ -618,26 +749,32 @@ body {
   width: 147px;
   height: 330px;
   background: url(~@images/bargame/sidebar.png) no-repeat;
+
   a {
     @extend .ti;
   }
+
   .anchor-wrap {
     .anchor {
       width: 98px;
       height: 47px;
       display: block;
       margin: 0 auto;
-      &:hover, &.active {
+
+      &:hover,
+      &.active {
         background: url(~@images/bargame/sb-hov.png) no-repeat;
       }
     }
   }
+
   .btn-apply {
     width: 115px;
     height: 45px;
     display: block;
     margin: 0 auto;
   }
+
   .btn-service {
     position: absolute;
     left: 45px;
@@ -646,4 +783,5 @@ body {
     height: 58px;
   }
 }
+
 /* 主体内容 end */

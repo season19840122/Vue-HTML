@@ -12,7 +12,7 @@ module.exports = {
   // imgOutputPath: 'res/seller/img',
   cssOutputPath: 'css', // 没修改之前的配置
   jsOutputPath: 'js',
-  imgOutputPath: '../img',
+  imgOutputPath: 'img',
   fontOutputPath: 'font',
 };
 

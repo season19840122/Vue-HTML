@@ -26,17 +26,17 @@ window.common = common;
 // window.Cookies = Cookies;
 
 var bargame = {
-  isHuoma(gameID) {
+  isHuoma(nAppId,sourceId) {
     try {
-      window.external.startApp(parseInt(gameId));
+      window.external.startApp(nAppId, sourceId);
       app.showMessage();
     } catch (e) {
       app.currentModal = 'huoma';
     }
   },
-  isOther(gameID) {
+  isOther(nAppId,sourceId) {
     try {
-      window.external.startApp(parseInt(gameId));
+      window.external.startApp(nAppId, sourceId);
       app.showMessage();
     } catch (e) {
       app.currentModal = 'cga';
@@ -196,29 +196,22 @@ var app = new Vue({
     },
     isClient(index) {
       if (index === 0) {
-        // 调起火马客户端，火马 gameId = 17014
-        bargame.isHuoma(17014);
+        // 调起火马客户端，火马 gameId =17275
+        // 测试
+        //bargame.isHuoma(13216);
+        bargame.isHuoma(17275, 0);
         return;
       }
       // 调起火马客户端，CGA gameId = 19638
-      bargame.isOther(19638);
+      //bargame.isHuoma(13216);
+      bargame.isOther(19638, 0);
     },
     initLive() {
       axios.live((err, data) => {
         if (err) {
           console.error(err.message);
         } else {
-          var arr = [];
-          if (data.length <= 4) {
-            for (var i = 0; i < data.length; i++) {
-              arr.push(data[i]);
-            }
-          } else if (data.length > 4) {
-            for (var j = 0; j < 4; j++) {
-              arr.push(data[j]);
-            }
-          }
-          this.live = arr;
+          this.live = data.slice(0,4);
           // return console.log(data);
         }
       });
@@ -227,30 +220,11 @@ var app = new Vue({
         if (err) {
           console.error(err.message);
         } else {
-          var arr = [];
-          var arr1 = [];
-          if (data.length <= 4) {
-            for (var i = 0; i < data.length; i++) {
-              arr.push(data[i]);
-            }
-            this.news = arr;
-          } else if (data.length > 4 && data.length <= 10) {
-            for (var j = 4; j < data.length; j++) {
-              arr1.push(data[j]);
-            }
-            this.newsNoPic = arr1;
-          } else if (data.length > 10) {
-            for (var a = 0; a < 4; a++) {
-              arr.push(data[a]);
-            }
-            for (var b = 4; b < 10; b++) {
-              arr1.push(data[b]);
-            }
-            this.news = arr;
-            this.newsNoPic = arr1;
-          }
-          // return console.log(data);
+          this.news = data.slice(0,4);
+          this.newsNoPic = data.slice(4,10);
         }
+        // return console.log(data);
+
       });
     },
     init() {
