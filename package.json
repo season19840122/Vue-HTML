@@ -60,6 +60,7 @@
     "es6-promise": "^4.2.5",
     "js-cookie": "^2.2.0",
     "jsonp": "^0.2.1",
+    "qs": "^6.7.0",
     "vue": "^2.5.16",
     "vuejs-paginate": "^2.1.0",
     "vuescroll": "^4.9.0",

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import config from './config';
-// import qs from "qs";
+import qs from "qs";
 // import Cookies from "js-cookie";
 // import router from '@/router'
 // 使用 vuex 做全局 loading 时使用
@@ -10,6 +10,7 @@ export default function $axios (options) {
   return new Promise((resolve, reject) => {
     const instance = axios.create({
       baseURL: config.baseURL,
+      // withCredentials: true,
       headers: {},
       transformResponse: [function (data) {
         return data;

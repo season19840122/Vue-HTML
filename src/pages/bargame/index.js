@@ -8,6 +8,7 @@ import Vue from 'vue';
 // 独立成一个文件，或者放在 common 里
 // import axios from '@scripts/lib/axios/json'; // 本地
 import axios from '@scripts/lib/axios/interface'; // 线上
+// import axios from '@scripts/lib/axios/interface-jsonp'; // 线上 JSONP
 import common from '@scripts/lib/common';
 import '@scripts/lib/vue-filter';
 // import Tpl from './index.vue';
@@ -74,50 +75,56 @@ var app = new Vue({
         '多多自走棋',
         '数码宝贝（WAR3 RPG）'
       ],
-      units: [{
-        url: 'https://www.shunwang.com/',
-        src: 'sw.png'
-      },
-      {
-        url: 'http://www.600633.cn/',
-        src: 'zswh.png'
-      },
-      {
-        url: 'http://www.xinhuanet.com/esports/',
-        src: 'xhw.png'
-      },
-      {
-        url: 'http://www.huoma.cn/',
-        src: 'hm.png'
-      },
-      {
-        url: 'http://www.cga.com.cn',
-        src: 'hf.png'
-      },
-      {
-        url: 'https://www.5211game.com/',
-        src: 'yy.png'
-      },
-      {
-        url: 'http://dragonest.com/',
-        src: 'ly.png'
-      },
-      {
-        url: 'http://www.10086.cn/index/zj/index_571_571.html',
-        src: 'zgyd.png'
-      },
-      {
-        url: 'https://yangba.syoogame.com/',
-        src: 'yx.png'
-      },
-      {
-        url: 'https://games.sina.com.cn/',
-        src: 'sinagame.png'
-      },
-      {
-        url: 'https://www.yuelun.com/',
-        src: 'yl.png'
-      },
+      units: [
+        {
+          url: 'http://www.xinhuanet.com/esports/',
+          src: 'xhw.png'
+        },
+        {
+          url: 'https://www.shunwang.com/',
+          src: 'sw.png'
+        },
+        {
+          url: 'http://www.600633.cn/',
+          src: 'zswh.png'
+        },
+        
+        {
+          url: 'http://www.huoma.cn/',
+          src: 'hm.png'
+        },
+        {
+          url: 'http://www.cga.com.cn',
+          src: 'hf.png'
+        },
+        {
+          url: 'http://es.cga.com.cn/',
+          src: 'cga.png'
+        },
+        {
+          url: 'https://www.5211game.com/',
+          src: 'yy.png'
+        },
+        {
+          url: 'http://dragonest.com/',
+          src: 'ly.png'
+        },
+        {
+          url: 'http://www.10086.cn/index/zj/index_571_571.html',
+          src: 'zgyd.png'
+        },
+        {
+          url: 'https://yangba.syoogame.com/',
+          src: 'yx.png'
+        },
+        {
+          url: 'https://games.sina.com.cn/',
+          src: 'sinagame.png'
+        },
+        {
+          url: 'https://www.yuelun.com/',
+          src: 'yl.png'
+        },
       ],
       newsIndex: 0,
       tabIndex: 0,
@@ -207,6 +214,32 @@ var app = new Vue({
       bargame.isOther(19638, 0);
     },
     initLive() {
+      // 直播
+      axios.live({
+        type: 9
+      }).then(res => {
+        // console.log(res);
+        if(res) {
+          this.live = res.slice(0,4);
+        } else {
+          console.error(err.message);
+        }
+      });
+
+      // 新闻
+      axios.news({
+        type: 10
+      }).then(res => {
+        // console.log(res);
+        if(res) {
+          this.news = res.slice(0,4);
+          this.newsNoPic = res.slice(4,10);
+        }else {
+          console.error(err.message);
+        }
+      });
+
+      /* // 直播 JSONP
       axios.live((err, data) => {
         if (err) {
           console.error(err.message);
@@ -216,6 +249,7 @@ var app = new Vue({
         }
       });
 
+      // 新闻 JSONP
       axios.news((err, data) => {
         if (err) {
           console.error(err.message);
@@ -224,8 +258,7 @@ var app = new Vue({
           this.newsNoPic = data.slice(4,10);
         }
         // return console.log(data);
-
-      });
+      }); */
     },
     init() {
       this.initLive();

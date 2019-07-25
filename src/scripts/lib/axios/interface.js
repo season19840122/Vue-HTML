@@ -1,5 +1,5 @@
-// import axios from './axios';
-import jsonp from './jsonp';
+import axios from './axios';
+// import jsonp from './jsonp';
 
 /**
  * 将所有接口统一起来便于维护
@@ -8,20 +8,20 @@ import jsonp from './jsonp';
 
 /* 首页 */
 // 直播
-const live = callback => {
-  return jsonp({
-    url: 'https://client.huoma.cn/sysNotice/listNotice?type=9',
-    jsonpName: 'live',
-    callback
+const live = data => {
+  return axios({
+    method: 'post',
+    url: 'https://client.huoma.cn/sysNotice/listNotice',
+    params: data
   });
 };
 
-// 资讯
-const news = callback => {
-  return jsonp({
-    url: 'https://client.huoma.cn/sysNotice/listNotice?type=10',
-    jsonpName: 'news',
-    callback
+// 新闻
+const news = data => {
+  return axios({
+    method: 'post',
+    url: 'https://client.huoma.cn/sysNotice/listNotice',
+    params: data
   });
 };
 
