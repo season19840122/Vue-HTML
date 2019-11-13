@@ -6,8 +6,8 @@ import Vue from 'vue';
 // import Cookies from 'js-cookie';
 // 逻辑部分
 // 独立成一个文件，或者放在 common 里
-// import axios from '@scripts/lib/axios/json'; // 本地
-import axios from '@scripts/lib/axios/interface'; // 线上
+import axios from '@scripts/lib/axios/json'; // 本地
+// import axios from '@scripts/lib/axios/interface'; // 线上
 // import axios from '@scripts/lib/axios/interface-jsonp'; // 线上 JSONP
 import common from '@scripts/lib/common';
 import '@scripts/lib/vue-filter';

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
-  <meta name="renderer" content="webkit">
+  <meta name="renderer" content="webkit" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <link rel="icon" href="favicon.ico" /> -->
   <title><%= htmlWebpackPlugin.options.title %></title>
@@ -27,6 +27,21 @@
 </head>
 
 <body>
+  <!--[if lt IE 8]>
+      <div id="browser" class="browser">
+        <p>
+          顺网提醒您：为了更好的浏览本页面，快跟您过时的浏览器说声后会无期，强烈建议升级至<a
+            href="https://windows.microsoft.com/zh-cn/windows/upgrade-your-browser"
+            target="_blank"
+            >最新版IE</a
+          >或<a
+            href="https://www.google.cn/intl/zh-CN/chrome/browser/desktop/"
+            target="_blank"
+            >chrome浏览器</a
+          >
+        </p>
+      </div>
+    <![endif]-->
   <div id="app" v-cloak>
     <div class="bg-box">
       <div class="bg1"></div>
@@ -46,10 +61,9 @@
             <iframe class="ifr" src="https://yangbaimg.syoogame.com/static/web/activity/simple_live/player.html"
               frameborder="0"></iframe>
             <ul>
-
               <li v-for="(item, index) in live">
                 <a :href="item.linkUrl" target="_blank" class="live-item">
-                  <img v-if="item.miniPic" :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="">
+                  <img v-if="item.miniPic" :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="" />
                   <!-- <img :src="'img/bargame/test/' + item.src" alt=""> -->
                   <!-- <img :src="'~@images/bargame/test/' + item" alt=""> -->
                   <p class="cap1">{{ item.title }}</p>
@@ -61,11 +75,11 @@
             class="btn-live ti">去直播间</a>
           <div class="news-wrap">
             <div class="news-pic">
-
               <ul>
                 <li v-for="(item, index) in news">
-                  <a :href="item.isLink == 1 ? item.linkUrl : 'http://www.huoma.cn/news?curNoticeId='+item.noticeId" target="_blank" class="news-item">
-                    <img  :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="">
+                  <a :href="item.isLink == 1 ? item.linkUrl : 'http://www.huoma.cn/news?curNoticeId='+item.noticeId"
+                    target="_blank" class="news-item">
+                    <img :src="'https://static.huoma.cn/upload/notice/' + item.miniPic" alt="" />
                     <!-- <img :src="'img/bargame/test/' + item.src" alt=""> -->
                     <!-- <img :src="'~@images/bargame/test/' + item" alt=""> -->
                     <p class="cap2">{{ item.title }}</p>
@@ -78,7 +92,8 @@
               <ul>
                 <li class="news-no-pic-item" :class="{active: newsIndex === index}" @click="newsClick(index)"
                   v-for="(item, index) in newsNoPic">
-                  <a :href="item.isLink == 1 ? item.linkUrl : 'http://www.huoma.cn/news?curNoticeId='+item.noticeId" target="_blank" class="cap3">{{ item.title }}</a>
+                  <a :href="item.isLink == 1 ? item.linkUrl : 'http://www.huoma.cn/news?curNoticeId='+item.noticeId"
+                    target="_blank" class="cap3">{{ item.title }}</a>
                 </li>
               </ul>
             </div>
@@ -122,7 +137,7 @@
           <ul>
             <li class="unit" v-for="(item, index) in units">
               <a :href="item.url" target="_blank">
-                <img :src="'img/bargame/' + item.src" alt="">
+                <img :src="'img/bargame/' + item.src" alt="" />
               </a>
             </li>
           </ul>
@@ -153,14 +168,16 @@
             <ul>
               <li :class="{ active: logoIndex === index }" v-for="(item, index) in modal" @click="clickGame(index)">
                 <div class="game-item">
-                  <img :src="'img/bargame/' + item.logo" alt="">
+                  <img :src="'img/bargame/' + item.logo" alt="" />
                   <p class="txt">{{ item.name }}</p>
                 </div>
               </li>
             </ul>
           </div>
           <div class="btn-wrap">
-            <button class="btn-confirm b" @click="handleApply(logoIndex)">报名</button>
+            <button class="btn-confirm b" @click="handleApply(logoIndex)">
+              报名
+            </button>
           </div>
         </div>
       </div>
@@ -169,7 +186,9 @@
       <div class="dialog-wrap info" v-if="currentModal === 'huoma'">
         <i class="i-close" @click="closeModal"></i>
         <div class="contents">
-          <p class="text">该网吧尚未安装“火马电竞”客户端，请联系网管安装后参与比赛。</p>
+          <p class="text">
+            该网吧尚未安装“火马电竞”客户端，请联系网管安装后参与比赛。
+          </p>
           <div class="btn-wrap">
             <button class="btn-confirm" @click="closeModal">知道了</button>
           </div>
@@ -196,7 +215,6 @@
       </div>
     </div>
   </div>
-
 </body>
 
 </html>
