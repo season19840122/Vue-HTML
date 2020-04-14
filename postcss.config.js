@@ -12,7 +12,7 @@ module.exports = {
     //   viewportWidth: 750, 
     //   unitPrecision: 5,
     //   viewportUnit: 'vw', 
-    //   selectorBlackList: [], 
+    //   selectorBlackList: ['.ignore', '.hairlines'], 
     //   minPixelValue: 1, 
     //   mediaQuery: false
     // })
