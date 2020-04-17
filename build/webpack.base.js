@@ -65,7 +65,7 @@ module.exports = {
       // 默认 NPM 包导出的是运行时构建，就是 vue.common.js，不包括 template 功能，为了使用独立构建，添加如下别名
       'vue': 'vue/dist/vue.js'
     },
-    extensions:['*','.css','.js','.vue']
+    extensions:['.css','.js','.vue']
   },
   plugins: [
     ...HTMLPlugins, // 利用 HTMLWebpackPlugin 插件合成最终页面
